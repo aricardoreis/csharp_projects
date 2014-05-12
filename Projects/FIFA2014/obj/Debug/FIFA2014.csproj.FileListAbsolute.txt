@@ -1,5 +1,0 @@
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\FIFA2014\bin\Debug\FIFA2014.dll
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\FIFA2014\bin\Debug\FIFA2014.pdb
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\FIFA2014\obj\Debug\FIFA2014.csprojResolveAssemblyReference.cache
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\FIFA2014\obj\Debug\FIFA2014.dll
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\FIFA2014\obj\Debug\FIFA2014.pdb
