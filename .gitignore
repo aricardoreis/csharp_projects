@@ -182,12 +182,12 @@ UpgradeLog*.htm
 *.bim_*.settings
 
 # Microsoft Fakes
-FakesAssemblies/
+FakesAssemblies/*.*
 Projects/FIFA2014/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-Projects/FIFA2014/bin
-Projects/FIFA2014/obj
-Projects/Main/bin
-Projects/Main/obj
+Projects/FIFA2014/bin/*.*
+Projects/FIFA2014/obj/*.*
+Projects/Main/bin/*.*
+Projects/Main/obj/*.*
 Projects/FIFA2014/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Projects/Main/obj/Debug/Main.csproj.FileListAbsolute.txt
 Projects/Main/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
