@@ -1,6 +1,0 @@
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\bin\Debug\Main.exe.config
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\bin\Debug\Main.exe
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\bin\Debug\Main.pdb
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\obj\Debug\Main.exe
-c:\Users\Fast\documents\visual studio 2012\Projects\Projects\Main\obj\Debug\Main.pdb
