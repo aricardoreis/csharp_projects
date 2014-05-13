@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FIFA14;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Main
     {
         static void Main(string[] args)
         {
+            string baseURL = "http://www.futhead.com/14/players/";
+            Player player = new Player(1, baseURL);
         }
     }
 }

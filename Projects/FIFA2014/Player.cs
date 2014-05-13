@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FIFA2014;
+using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +8,29 @@ using System.Threading.Tasks;
 
 namespace FIFA14
 {
-    class Player
+    public class Player : SearchableObject
     {
-        public int Id { get; set; }
-        public string ShortName { get; set; }
+        public Player(int id, string url)
+            : base(id, url)
+        {
+        }
+
+        public string ShortName 
+        {
+            get
+            {
+                string result = null;
+
+                HtmlNode node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-name']/span");
+                if (node != null)
+                {
+                    result = node.InnerText;
+                }
+
+                return result;
+            }
+        }
+
         public string FullName { get; set; }
         public string Position { get; set; }
         public int Age { get; set; }
