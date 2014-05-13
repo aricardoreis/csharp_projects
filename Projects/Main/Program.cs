@@ -12,7 +12,7 @@ namespace Main
         static void Main(string[] args)
         {
             string baseURL = "http://www.futhead.com/14/players/";
-            Player player = new Player(1, baseURL);
+            Player player = new Player(12386, baseURL);
         }
     }
 }

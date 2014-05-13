@@ -15,7 +15,7 @@ namespace FIFA14
         {
         }
 
-        public string ShortName 
+        public string ShortName
         {
             get
             {
@@ -31,22 +31,172 @@ namespace FIFA14
             }
         }
 
-        public string FullName { get; set; }
-        public string Position { get; set; }
-        public int Age { get; set; }
+        public string FullName
+        {
+            get
+            {
+                string result = null;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = nodes[0].InnerText;
+                }
+
+                return result;
+            }
+        }
+
+        public string Source
+        {
+            get
+            {
+                string result = null;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    if (nodes[7].InnerText == "Source")
+                    {
+                        result = nodes[8].InnerText;
+                    }
+                }
+
+                return result;
+            }
+        }
+
+        public PlayerPosition Position
+        {
+            get
+            {
+                PlayerPosition result = PlayerPosition.None;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = (PlayerPosition)Enum.Parse(typeof(PlayerPosition), nodes[10].InnerText);
+                }
+
+                return result;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                int result = 0;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = int.Parse(nodes[12].InnerText);
+                }
+
+                return result;
+            }
+        }
 
         public int ClubId { get; set; }
         public int LeagueId { get; set; }
         public int NationId { get; set; }
 
-        public int Height { get; set; }
-        public string Foot { get; set; }
+        public int Height
+        {
+            get
+            {
+                int result = 0;
 
-        public int AttackWorkrate { get; set; }
-        public int DefensiveWorkrate { get; set; }
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = int.Parse(nodes[14].InnerText.Substring(0, 3));
+                }
 
-        public int WeakFoot { get; set; }
-        public int SkillMoves { get; set; }
+                return result;
+            }
+        }
+
+        public PlayerFoot Foot
+        {
+            get
+            {
+                PlayerFoot result = PlayerFoot.None;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = (PlayerFoot)Enum.Parse(typeof(PlayerFoot), nodes[16].InnerText);
+                }
+
+                return result;
+            }
+        }
+
+        public PlayerLevel AttackWorkrate
+        {
+            get
+            {
+                PlayerLevel result = PlayerLevel.None;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodes[18].InnerText);
+                }
+
+                return result;
+            }
+        }
+
+        public PlayerLevel DefensiveWorkrate
+        {
+            get
+            {
+                PlayerLevel result = PlayerLevel.None;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodes[20].InnerText);
+                }
+
+                return result;
+            }
+        }
+
+        public int WeakFoot
+        {
+            get
+            {
+                int result = 0;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = int.Parse(nodes[22].InnerText.Trim());
+                }
+
+                return result;
+            }
+        }
+
+        public int SkillMoves
+        {
+            get
+            {
+                int result = 0;
+
+                HtmlNodeCollection nodes = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+                if (nodes.Count > 0)
+                {
+                    result = int.Parse(nodes[24].InnerText.Trim());
+                }
+
+                return result;
+            }
+        }
 
         #region Skills
 

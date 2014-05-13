@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerFoot.cs" />
+    <Compile Include="PlayerLevel.cs" />
+    <Compile Include="PlayerPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchableObject.cs" />
   </ItemGroup>
