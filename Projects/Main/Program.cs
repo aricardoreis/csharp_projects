@@ -1,4 +1,4 @@
-﻿using FIFA14;
+﻿using FIFA2014;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,10 @@ namespace Main
         static void Main(string[] args)
         {
             string baseURL = "http://www.futhead.com/14/players/";
-            Player player = new Player(12386, baseURL);
+            int id = 12386;
+            int gkId = 906;
+            //Player player = new Player(12386, baseURL);
+            PlayerBase basePlayer = PlayerFactory.CreatePlayer(id, baseURL);
         }
     }
 }
