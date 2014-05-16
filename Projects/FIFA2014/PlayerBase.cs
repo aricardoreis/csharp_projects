@@ -165,9 +165,9 @@ namespace FIFA2014
             if (result != null)
             {
                 PriceInformation prices = JsonConvert.DeserializeObject<PriceInformation>(result);
-                PriceOnPlayStation = prices.PS;
-                PriceOnXbox = prices.Xbox;
-                PriceOnPC = prices.PC;
+                PriceOnPlayStation = StringToInt(prices.PS);
+                PriceOnXbox = StringToInt(prices.Xbox);
+                PriceOnPC = StringToInt(prices.PC);
             }
         }
 
@@ -178,6 +178,16 @@ namespace FIFA2014
             {
                 prop.SetValue(this, value, null);
             }
+        }
+
+        private int? StringToInt(string value)
+        {
+            int result;
+            if (int.TryParse(value, out result))
+            {
+                return result;
+            }
+            return null;
         }
 
     }

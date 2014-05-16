@@ -10,10 +10,10 @@ namespace FIFA2014
     public class PriceInformation
     {
         [JsonProperty("xb")]
-        public int Xbox { get; set; }
+        public string Xbox { get; set; }
         [JsonProperty("ps")]
-        public int PS { get; set; }
+        public string PS { get; set; }
         [JsonProperty("pc")]
-        public int PC { get; set; }
+        public string PC { get; set; }
     }
 }
