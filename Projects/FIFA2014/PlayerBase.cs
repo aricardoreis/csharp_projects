@@ -151,7 +151,9 @@ namespace FIFA2014
 
                 Position = (PlayerPosition)Enum.Parse(typeof(PlayerPosition), nodeCollection[index += 4].InnerText);
                 Age = int.Parse(nodeCollection[index += 2].InnerText);
-                Height = int.Parse(nodeCollection[index += 2].InnerText.Substring(0, 3));
+                string temp = nodeCollection[index += 2].InnerText;
+                int finalIndex = temp.IndexOf('c');
+                Height = int.Parse(temp.Substring(0, finalIndex));
                 Foot = (PlayerFoot)Enum.Parse(typeof(PlayerFoot), nodeCollection[index += 2].InnerText);
                 AttackWorkrate = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodeCollection[index += 2].InnerText);
                 DefensiveWorkrate = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodeCollection[index += 2].InnerText);
