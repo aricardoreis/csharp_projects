@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main.csproj", "{91D4854B-8F10-45E8-A6D2-B971E1FCD7C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA2014", "FIFA2014\FIFA2014.csproj", "{F50D9746-75B2-4416-82BF-C0C2B265B197}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA15", "FIFA2014\FIFA15.csproj", "{F50D9746-75B2-4416-82BF-C0C2B265B197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

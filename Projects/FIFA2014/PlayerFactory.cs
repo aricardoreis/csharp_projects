@@ -1,11 +1,11 @@
-﻿using FIFA2014;
+﻿using FIFA15;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FIFA2014
+namespace FIFA15
 {
     public class PlayerFactory
     {

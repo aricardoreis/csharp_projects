@@ -8,12 +8,12 @@ using System.Reflection;
 using System.Net;
 using Newtonsoft.Json;
 
-namespace FIFA2014
+namespace FIFA15
 {
     public class PlayerBase
     {
         private const string SOURCE = "Source";
-        private const string PRICES_URL = "http://www.futhead.com/14/players/{0}/prices/all/";
+        private const string PRICES_URL = "http://www.futhead.com/15/players/{0}/prices/all/";
 
         protected string _url;
         protected HtmlDocument _document;

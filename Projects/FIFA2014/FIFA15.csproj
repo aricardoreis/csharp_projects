@@ -7,8 +7,8 @@
     <ProjectGuid>{F50D9746-75B2-4416-82BF-C0C2B265B197}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FIFA2014</RootNamespace>
-    <AssemblyName>FIFA2014</AssemblyName>
+    <RootNamespace>FIFA15</RootNamespace>
+    <AssemblyName>FIFA15</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

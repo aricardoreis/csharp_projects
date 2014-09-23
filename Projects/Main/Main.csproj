@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FIFA2014\FIFA2014.csproj">
+    <ProjectReference Include="..\FIFA2014\FIFA15.csproj">
       <Project>{f50d9746-75b2-4416-82bf-c0c2b265b197}</Project>
-      <Name>FIFA2014</Name>
+      <Name>FIFA15</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

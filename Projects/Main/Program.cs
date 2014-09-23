@@ -1,4 +1,4 @@
-﻿using FIFA2014;
+﻿using FIFA15;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,9 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            string baseURL = "http://www.futhead.com/14/players/";
+            string baseURL = "http://www.futhead.com/15/players/";
             //int id = 12103;
-            int id = 12509;
+            int id = 1;
             int gkId = 906;
             //Player player = new Player(12386, baseURL);
             PlayerBase basePlayer = PlayerFactory.CreatePlayer(id, baseURL);
