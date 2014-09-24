@@ -1,7 +1,4 @@
-CREATE TABLE PlayerPosition(
-	id INTEGER PRIMARY KEY,
-	position TEXT NOT NULL
-);
+
 
 CREATE TABLE Player(
     id INTEGER PRIMARY KEY,
