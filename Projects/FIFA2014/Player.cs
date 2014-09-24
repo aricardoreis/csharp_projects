@@ -73,7 +73,7 @@ namespace FIFA15
         public int? PAS { get; set; }
         public int? DRI { get; set; }
         public int? DEF { get; set; }
-        public int? HEA { get; set; }
+        public int? PHY { get; set; }
 
         #endregion
 
@@ -86,7 +86,7 @@ namespace FIFA15
             PAS = Attribute3;
             DRI = Attribute4;
             DEF = Attribute5;
-            HEA = Attribute6;
+            PHY = Attribute6;
 
             HtmlNodeCollection nodeCollection = null;
 
