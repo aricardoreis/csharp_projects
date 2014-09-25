@@ -37,7 +37,13 @@ namespace FIFA15
         public PlayerLevel DefensiveWorkrate { get; set; }
         public int? WeakFoot { get; set; }
         public int? SkillMoves { get; set; }
-
+        public string ImageUrl { get; set; }
+        public string ClubImageUrl { get; set; }
+        public string NationImageUrl { get; set; }
+        public int ClubId { get; set; }
+        public int NationId { get; set; }
+        public int LeagueId { get; set; }
+        
         #endregion
 
         #region Prices
@@ -133,6 +139,35 @@ namespace FIFA15
                 ShortName = node.InnerText;
             }
 
+            node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-picture']/img");
+            if (node != null)
+            {
+                ImageUrl = node.Attributes["src"].Value;
+            }
+
+            node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-nation']/img");
+            if (node != null)
+            {
+                NationImageUrl = node.Attributes["src"].Value;
+                NationId = Convert.ToInt32(NationImageUrl.Substring(50).Replace(".png", ""));
+            }
+
+            node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-club']/img");
+            if (node != null)
+            {
+                ClubImageUrl = node.Attributes["src"].Value;
+                ClubId = Convert.ToInt32(ClubImageUrl.Substring(48).Replace(".png", ""));
+            }
+
+            // lod the league id on the other page
+            nodeCollection = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']/table[1]/tbody/tr/td/a");
+            string url = nodeCollection[2].Attributes["href"].Value;
+            HtmlWeb htmlWeb = new HtmlWeb();
+            htmlWeb.OverrideEncoding = Encoding.UTF8;
+            HtmlDocument document = htmlWeb.Load("http://www.futhead.com/" + url);
+            node = document.DocumentNode.SelectSingleNode("//h1/img");
+            LeagueId = Convert.ToInt32(node.Attributes["src"].Value.Substring(56).Replace(".png", ""));
+
             nodeCollection = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
             if (nodeCollection != null && nodeCollection.Count > 0)
             {
@@ -162,15 +197,15 @@ namespace FIFA15
             }
 
             // loads the prices
-            WebClient client = new WebClient();
-            string result = client.DownloadString(string.Format(PRICES_URL, Id));
-            if (result != null)
-            {
-                PriceInformation prices = JsonConvert.DeserializeObject<PriceInformation>(result);
-                PriceOnPlayStation = StringToInt(prices.PS);
-                PriceOnXbox = StringToInt(prices.Xbox);
-                PriceOnPC = StringToInt(prices.PC);
-            }
+            //WebClient client = new WebClient();
+            //string result = client.DownloadString(string.Format(PRICES_URL, Id));
+            //if (result != null)
+            //{
+            //    PriceInformation prices = JsonConvert.DeserializeObject<PriceInformation>(result);
+            //    PriceOnPlayStation = StringToInt(prices.PS);
+            //    PriceOnXbox = StringToInt(prices.Xbox);
+            //    PriceOnPC = StringToInt(prices.PC);
+            //}
         }
 
         protected void SetPropertyValue(string propertyName, object value)

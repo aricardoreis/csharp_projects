@@ -54,5 +54,9 @@ CREATE TABLE Player(
 	aggression INTEGER,
 	positioning INTEGER,
 	interceptions INTEGER,
-	vision INTEGER
+	vision INTEGER,
+	-- urls, datas
+	image_url TEXT,
+	image BLOB,
+	
 );

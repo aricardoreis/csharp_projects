@@ -12,7 +12,7 @@ namespace Main
         static void Main(string[] args)
         {
             string baseURL = "http://www.futhead.com/15/players/";
-            //int id = 12103;
+            //int id = 39941;
             int id = 1;
             int gkId = 906;
             //Player player = new Player(12386, baseURL);
