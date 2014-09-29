@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 
 namespace Main
 {
@@ -17,6 +18,11 @@ namespace Main
             int gkId = 906;
             //Player player = new Player(12386, baseURL);
             PlayerBase basePlayer = PlayerFactory.CreatePlayer(id, baseURL);
+
+            SQLiteConnection connection = new SQLiteConnection("Data Source=fifa15.sqlite;Version=3;New=False;Compress=True;");
+            connection.Open();
+
+            connection.Close();
         }
     }
 }

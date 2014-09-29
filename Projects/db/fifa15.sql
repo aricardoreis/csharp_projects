@@ -1,4 +1,20 @@
+CREATE TABLE Club(
+	id INTEGER PRIMARY KEY ASC,
+	name TEXT,
+	code TEXT
+);
 
+CREATE TABLE League(
+	id INTEGER PRIMARY KEY ASC,
+	name TEXT,
+	code TEXT
+);
+
+CREATE TABLE Nation(
+	id INTEGER PRIMARY KEY ASC,
+	name TEXT,
+	code TEXT
+);
 
 CREATE TABLE Player(
     id INTEGER PRIMARY KEY,
@@ -7,6 +23,9 @@ CREATE TABLE Player(
     club_name TEXT,
     league_name TEXT,
     nation_name TEXT,
+	club_id INTEGER,
+    league_id INTEGER,
+    nation_id INTEGER,
     source TEXT,
     age INTEGER,
     height INTEGER,
