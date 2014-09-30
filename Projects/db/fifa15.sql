@@ -25,6 +25,8 @@ CREATE TABLE Player(
     nation_name TEXT,
 	club_id INTEGER,
     league_id INTEGER,
+	type INTEGER,
+	rare INTEGER,
     nation_id INTEGER,
     source TEXT,
     age INTEGER,

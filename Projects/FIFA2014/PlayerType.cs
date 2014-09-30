@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FIFA15
 {
-    public enum PlayerLevel
+    public enum PlayerType
     {
-        None,
-        Low,
-        Medium,
-        High
+        Bronze,
+        Silver,
+        Gold
     }
 }

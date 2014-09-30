@@ -47,11 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="PlayerType.cs" />
     <Compile Include="GoalKeeper.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerFactory.cs" />
     <Compile Include="PlayerFoot.cs" />
-    <Compile Include="PlayerLevel.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="PlayerPosition.cs" />
     <Compile Include="PriceInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

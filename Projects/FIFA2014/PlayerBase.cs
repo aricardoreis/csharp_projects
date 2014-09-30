@@ -29,12 +29,14 @@ namespace FIFA15
         public string LeagueName { get; set; }
         public string NationName { get; set; }
         public string Source { get; set; }
+        public PlayerType Type { get; set; }
+        public bool Rare { get; set; }
         public PlayerPosition Position { get; set; }
         public int? Age { get; set; }
         public int? Height { get; set; }
         public PlayerFoot Foot { get; set; }
-        public PlayerLevel AttackWorkrate { get; set; }
-        public PlayerLevel DefensiveWorkrate { get; set; }
+        public Level AttackWorkrate { get; set; }
+        public Level DefensiveWorkrate { get; set; }
         public int? WeakFoot { get; set; }
         public int? SkillMoves { get; set; }
         public string ImageUrl { get; set; }
@@ -139,6 +141,8 @@ namespace FIFA15
                 ShortName = node.InnerText;
             }
 
+            node = _document.DocumentNode.SelectSingleNode("//*[@id='player-overview-card']/a/div");
+
             node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-picture']/img");
             if (node != null)
             {
@@ -159,7 +163,7 @@ namespace FIFA15
                 ClubId = Convert.ToInt32(ClubImageUrl.Substring(48).Replace(".png", ""));
             }
 
-            // lod the league id on the other page
+            // load the league id on the other page
             nodeCollection = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']/table[1]/tbody/tr/td/a");
             string url = nodeCollection[2].Attributes["href"].Value;
             HtmlWeb htmlWeb = new HtmlWeb();
@@ -190,8 +194,8 @@ namespace FIFA15
                 int finalIndex = temp.IndexOf('c');
                 Height = int.Parse(temp.Substring(0, finalIndex));
                 Foot = (PlayerFoot)Enum.Parse(typeof(PlayerFoot), nodeCollection[index += 2].InnerText);
-                AttackWorkrate = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodeCollection[index += 2].InnerText);
-                DefensiveWorkrate = (PlayerLevel)Enum.Parse(typeof(PlayerLevel), nodeCollection[index += 2].InnerText);
+                AttackWorkrate = (Level)Enum.Parse(typeof(Level), nodeCollection[index += 2].InnerText);
+                DefensiveWorkrate = (Level)Enum.Parse(typeof(Level), nodeCollection[index += 2].InnerText);
                 WeakFoot = int.Parse(nodeCollection[index += 2].InnerText.Trim());
                 SkillMoves = int.Parse(nodeCollection[index += 2].InnerText.Trim());
             }
