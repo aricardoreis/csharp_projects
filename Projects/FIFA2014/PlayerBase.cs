@@ -30,7 +30,8 @@ namespace FIFA15
         public string NationName { get; set; }
         public string Source { get; set; }
         public PlayerType Type { get; set; }
-        public bool Rare { get; set; }
+        public bool IsRare { get; set; }
+        public bool IsInForm { get; set; }
         public PlayerPosition Position { get; set; }
         public int? Age { get; set; }
         public int? Height { get; set; }
@@ -142,6 +143,13 @@ namespace FIFA15
             }
 
             node = _document.DocumentNode.SelectSingleNode("//*[@id='player-overview-card']/a/div");
+            string data = node.Attributes[0].Value;
+            IsRare = !data.Contains("non-rare");
+            IsInForm = data.Contains("if");
+            this.Type = data.Contains("gold") ? PlayerType.Gold : 
+                data.Contains("silver") ? PlayerType.Silver : 
+                data.Contains("bronze") ? PlayerType.Bronze : 
+                PlayerType.None;
 
             node = _document.DocumentNode.SelectSingleNode("//div[@class='playercard-picture']/img");
             if (node != null)
@@ -164,15 +172,15 @@ namespace FIFA15
             }
 
             // load the league id on the other page
-            nodeCollection = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']/table[1]/tbody/tr/td/a");
-            string url = nodeCollection[2].Attributes["href"].Value;
+            node = _document.DocumentNode.SelectSingleNode("/html/body/div[2]/div[3]/div[1]/div[2]/div[1]/table[1]/tbody/tr[3]/td[2]/a");
+            string url = node.Attributes["href"].Value;
             HtmlWeb htmlWeb = new HtmlWeb();
             htmlWeb.OverrideEncoding = Encoding.UTF8;
             HtmlDocument document = htmlWeb.Load("http://www.futhead.com/" + url);
             node = document.DocumentNode.SelectSingleNode("//h1/img");
             LeagueId = Convert.ToInt32(node.Attributes["src"].Value.Substring(56).Replace(".png", ""));
 
-            nodeCollection = _document.DocumentNode.SelectNodes("//div[@id='player-misc-stats']//td");
+            nodeCollection = _document.DocumentNode.SelectNodes("//div[@class='right-content-fixed']//td");
             if (nodeCollection != null && nodeCollection.Count > 0)
             {
                 int index = 0;

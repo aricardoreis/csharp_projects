@@ -8,6 +8,7 @@ namespace FIFA15
 {
     public enum PlayerType
     {
+        None = 0,
         Bronze,
         Silver,
         Gold
